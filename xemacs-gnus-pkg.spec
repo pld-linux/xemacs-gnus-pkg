@@ -7,6 +7,7 @@ Group:		Applications/Editors/Emacs
 Group(de):	Applikationen/Editors/Emacs
 Group(pl):	Aplikacje/Edytory/Emacs
 Source0:	ftp://ftp.task.gda.pl/mirror/ftp.gnus.org/pub/gnus/gnus-%{version}.tar.gz
+Source1:	http://www.gnus.org/dist/etc.tar.gz
 URL:		http://www.gnus.org/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -18,7 +19,7 @@ add
 %description -l pl 
 
 %prep
-%setup -q -n gnus-%{version}
+%setup -q -n gnus-%{version} -a1
 cat <<EOF >lisp/auto-autoloads.el
 (autoload 'gnus "gnus" nil t)
 EOF
