@@ -11,6 +11,8 @@ Group(pl):	Aplikacje/Edytory/Emacs
 Source0:	ftp://ftp.gnus.org/pub/gnus/gnus-%{version}.tar.gz
 Source1:	ftp://ftp.gnus.org/pub/gnus/etc-%{etc_ver}.tar.gz
 URL:		http://www.gnus.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	xemacs
 Requires:	xemacs
 Requires:	xemacs-eterm-pkg
@@ -41,6 +43,8 @@ cat <<EOF >lisp/auto-autoloads.el
 EOF
 
 %build                                                      
+aclocal
+autoconf
 %configure
 %{__make} EMACS=xemacs
 
