@@ -19,7 +19,6 @@ Requires:	xemacs-gnus-pkg
 Requires:	xemacs-mailcrypt-pkg
 Requires:	xemacs-mail-lib-pkg
 Requires:	xemacs-mh-e-pkg
-Requires:	xemacs-rmail-pkg
 Requires:	xemacs-w3-pkg
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
