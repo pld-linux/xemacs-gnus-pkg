@@ -54,7 +54,7 @@ Dokumentacja info dla GNUSa.
 
 %build
 aclocal
-autoconf
+%{__autoconf}
 %configure
 %{__make} EMACS=xemacs
 
