@@ -6,8 +6,6 @@ Version:	5.8.8
 Release:	3
 License:	GPL
 Group:		Applications/Editors/Emacs
-Group(de):	Applikationen/Editors/Emacs
-Group(pl):	Aplikacje/Edytory/Emacs
 Source0:	ftp://ftp.gnus.org/pub/gnus/gnus-%{version}.tar.gz
 Source1:	ftp://ftp.gnus.org/pub/gnus/etc-%{etc_ver}.tar.gz
 URL:		http://www.gnus.org/
