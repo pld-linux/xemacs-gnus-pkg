@@ -29,7 +29,7 @@ news can be gotten by any nefarious means you can think of -- NNTP,
 local spool or your mbox file. All at the same time, if you want to
 push your luck.
 
-%description -l pl 
+%description -l pl
 Dzieki pakietowi Gnus mo¿esz czytaæ newsy i pocztê z u¿yciem XEmacsa.
 Gnus mo¿e pobieraæ listy z najró¿niejszych ¼róde³ w tym z lokalnego
 spoola jak i plików mbox.
@@ -49,10 +49,10 @@ Requires:       xemacs-gnus-pkg = %{version}
 %description -n xemacs-gnus-info-pkg
 Info documentation for GNUS.
 
-%description -l pl -n xemacs-gnus-info-pkg
+%description -n xemacs-gnus-info-pkg -l pl
 Dokumentacja info dla GNUSa.
 
-%build                                                      
+%build
 aclocal
 autoconf
 %configure
