@@ -3,7 +3,7 @@ Summary(pl):	Emacsowy czytnik poczty oraz grup usenet
 Name:		xemacs-gnus-pkg
 Version:	5.8.8
 %define		etc_ver 0.27
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Editors/Emacs
 Source0:	ftp://ftp.gnus.org/pub/gnus/gnus-%{version}.tar.gz
