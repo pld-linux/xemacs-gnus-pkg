@@ -12,6 +12,7 @@ Source0:	ftp://ftp.gnus.org/pub/gnus/gnus-%{version}.tar.gz
 Source1:	ftp://ftp.gnus.org/pub/gnus/etc-%{etc_ver}.tar.gz
 URL:		http://www.gnus.org/
 BuildRequires:	xemacs
+Requires:	xemacs
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
