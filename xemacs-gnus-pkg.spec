@@ -13,6 +13,14 @@ Source1:	ftp://ftp.gnus.org/pub/gnus/etc-%{etc_ver}.tar.gz
 URL:		http://www.gnus.org/
 BuildRequires:	xemacs
 Requires:	xemacs
+Requires:	xemacs-eterm-pkg
+Requires:	xemacs-fsf-compat-pkg
+Requires:	xemacs-gnus-pkg
+Requires:	xemacs-mailcrypt-pkg
+Requires:	xemacs-mail-lib-pkg
+Requires:	xemacs-mh-e-pkg
+Requires:	xemacs-rmail-pkg
+Requires:	xemacs-w3-pkg
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
