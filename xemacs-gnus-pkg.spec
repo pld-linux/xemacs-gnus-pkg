@@ -23,7 +23,6 @@ Requires:	xemacs-rmail-pkg
 Requires:	xemacs-eterm-pkg
 Requires:	xemacs-mail-lib-pkg
 Requires:	xemacs-base-pkg
-Prereq:		/usr/sbin/fix-info-dir
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -52,10 +51,10 @@ gzip -9nf $RPM_BUILD_ROOT%{_infodir}/*.info* \
 rm -fr $RPM_BUILD_ROOT
 
 %post
-%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun
-%{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %files
 %defattr(644,root,root,755)
