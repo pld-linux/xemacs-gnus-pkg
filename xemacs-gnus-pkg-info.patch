@@ -1,0 +1,28 @@
+diff -Nur xemacs-gnus-pkg-1.44/man/gnus/gnus.texi xemacs-gnus-pkg-1.44.new/man/gnus/gnus.texi
+--- xemacs-gnus-pkg-1.44/man/gnus/gnus.texi	Sat Nov 28 11:33:20 1998
++++ xemacs-gnus-pkg-1.44.new/man/gnus/gnus.texi	Sun Mar 26 15:05:44 2000
+@@ -1,13 +1,20 @@
+ \input texinfo                  @c -*-texinfo-*-
+ 
+-@setfilename gnus
++@setfilename ../../info/gnus.info
+ @settitle Gnus 5.6.45 Manual
+ @synindex fn cp
+ @synindex vr cp
+ @synindex pg cp
+-@c @direntry
+-@c * Gnus: (gnus).         The newsreader Gnus.
+-@c @end direntry
++
++@ifinfo
++@format
++@dircategory XEmacs Editor:
++@direntry
++* Gnus: (gnus).                         The newsreader Gnus.
++@end direntry
++@end format
++@end ifinfo
++
+ @iftex
+ @finalout
+ @end iftex
