@@ -3,7 +3,7 @@ Summary(pl):	Emacsowy czytnik poczty oraz grup usenet
 Name:		xemacs-gnus-pkg
 Version:	5.8.8
 %define		etc_ver 0.27
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Editors/Emacs
 Group(de):	Applikationen/Editors/Emacs
@@ -24,15 +24,15 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-You can read news (and mail) from within XEmacs by using Gnus. The news
-can be gotten by any nefarious means you can think of -- NNTP, local
-spool or your mbox file. All at the same time, if you want to push
-your luck.
+You can read news (and mail) from within XEmacs by using Gnus. The
+news can be gotten by any nefarious means you can think of -- NNTP,
+local spool or your mbox file. All at the same time, if you want to
+push your luck.
 
 %description -l pl 
 Dzieki pakietowi Gnus mo¿esz czytaæ newsy i pocztê z u¿yciem XEmacsa.
-Gnus mo¿e pobieraæ listy z najró¿niejszych ¼róde³ w tym z lokalnego spoola
-jak i plików mbox.
+Gnus mo¿e pobieraæ listy z najró¿niejszych ¼róde³ w tym z lokalnego
+spoola jak i plików mbox.
 
 %prep
 %setup -q -n gnus-%{version} -a1
