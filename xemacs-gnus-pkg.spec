@@ -15,7 +15,6 @@ BuildRequires:	xemacs
 Requires:	xemacs
 Requires:	xemacs-eterm-pkg
 Requires:	xemacs-fsf-compat-pkg
-Requires:	xemacs-gnus-pkg
 Requires:	xemacs-mailcrypt-pkg
 Requires:	xemacs-mail-lib-pkg
 Requires:	xemacs-mh-e-pkg
