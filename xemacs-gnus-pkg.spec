@@ -14,10 +14,15 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This is XEmacs News and Mail system
-add 
+You can read news (and mail) from within XEmacs by using Gnus. The news
+can be gotten by any nefarious means you can think of -- NNTP, local
+spool or your mbox file. All at the same time, if you want to push
+your luck.
 
 %description -l pl 
+Dzieki pakietowi Gnus mo¿esz czytaæ newsy i pocztê z u¿yciem XEmacsa.
+Gnus mo¿e pobieraæ listy z najró¿niejszych ¼róde³ w tym z lokalnego spoola
+jak i plików mbox.
 
 %prep
 %setup -q -n gnus-%{version} -a1
@@ -31,12 +36,11 @@ EOF
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/lisp/gnus
-install -d $RPM_BUILD_ROOT%{_infodir}
+install -d $RPM_BUILD_ROOT{%{_datadir}/xemacs-packages/lisp/gnus,%{_infodir}}
 
 # remove .el file if corresponding .elc exists
 for i in lisp/*.el; do test ! -f ${i}c || rm -f $i ; done
-cp -a etc-%{etc_ver} $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/etc
+cp -a etc-%{etc_ver} $RPM_BUILD_ROOT%{_datadir}/xemacs-packages%{_sysconfdir}
 install lisp/*.el* $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/lisp/gnus
 install texi/gnus{,-[0-9]*} $RPM_BUILD_ROOT%{_infodir}
 
@@ -48,7 +52,6 @@ gzip -9nf README GNUS-NEWS ChangeLog
 
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT
