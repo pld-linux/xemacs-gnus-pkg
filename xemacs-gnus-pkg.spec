@@ -31,7 +31,7 @@ local spool or your mbox file. All at the same time, if you want to
 push your luck.
 
 %description -l pl
-Dziêki pakietowi Gnus mo¿esz czytaæ newsy i pocztê z u¿yciem XEmacsa.
+Dziêki pakietowi Gnus mo¿na czytaæ newsy i pocztê z u¿yciem XEmacsa.
 Gnus mo¿e pobieraæ listy z najró¿niejszych ¼róde³ w tym z lokalnego
 spoola jak i plików mbox.
 
