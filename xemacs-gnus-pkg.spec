@@ -7,13 +7,12 @@ Release:	1
 License:	GPL
 Group:		Applications/Editors/Emacs
 Group(pl):	Aplikacje/Edytory/Emacs
-Source0:	ftp://ftp.xemacs.org/packages/%{srcname}-%{version}-pkg.tar.gz
+Source0:	ftp://ftp.xemacs.org/xemacs/packages/%{srcname}-%{version}-pkg.tar.gz
 Patch0:		xemacs-gnus-pkg-info.patch
 URL:		http://www.xemacs.org/
 BuildArch:	noarch
 Conflicts:	xemacs-sumo
 Requires:	xemacs
-Requires:	xemacs-gnus-pkg
 Requires:	xemacs-tm-pkg
 Requires:	xemacs-apel-pkg
 Requires:	xemacs-w3-pkg
