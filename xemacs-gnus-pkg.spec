@@ -1,4 +1,5 @@
 Summary:	Emacs News and Mail reader
+Summary(pl):	Emacsowy czytnik poczty oraz grup usenet
 Name:		xemacs-gnus-pkg
 Version:	5.8.8
 %define		etc_ver 0.27
@@ -7,8 +8,8 @@ License:	GPL
 Group:		Applications/Editors/Emacs
 Group(de):	Applikationen/Editors/Emacs
 Group(pl):	Aplikacje/Edytory/Emacs
-Source0:	ftp://ftp.task.gda.pl/mirror/ftp.gnus.org/pub/gnus/gnus-%{version}.tar.gz
-Source1:	ftp://ftp.task.gda.pl/mirror/ftp.gnus.org/pub/gnus/etc-%{etc_ver}.tar.gz
+Source0:	ftp://ftp.gnus.org/pub/gnus/gnus-%{version}.tar.gz
+Source1:	ftp://ftp.gnus.org/pub/gnus/etc-%{etc_ver}.tar.gz
 URL:		http://www.gnus.org/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -31,7 +32,7 @@ cat <<EOF >lisp/auto-autoloads.el
 EOF
 
 %build                                                      
-./configure
+%configure
 %{__make} EMACS=xemacs
 
 %install
