@@ -3,7 +3,7 @@ Summary(pl):	Emacsowy czytnik poczty oraz grup usenet
 Name:		xemacs-gnus-pkg
 Version:	5.8.8
 %define		etc_ver 0.27
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Editors/Emacs
 Group(de):	Applikationen/Editors/Emacs
@@ -42,6 +42,18 @@ cat <<EOF >lisp/auto-autoloads.el
 (autoload 'gnus "gnus" nil t)
 EOF
 
+%package -n xemacs-gnus-info-pkg
+Summary:        Info documentation for GNUS
+Summary(pl):    Dokumentacja info dla GNUSa
+Group:          Applications/Editors/Emacs
+Requires:       xemacs-gnus-pkg = %{version}
+
+%description -n xemacs-gnus-info-pkg
+Info documentation for GNUS.
+
+%description -l pl -n xemacs-gnus-info-pkg
+Dokumentacja info dla GNUSa.
+
 %build                                                      
 aclocal
 autoconf
@@ -61,10 +73,10 @@ install texi/gnus{,-[0-9]*} $RPM_BUILD_ROOT%{_infodir}
 gzip -9nf README GNUS-NEWS ChangeLog
 
 
-%post
+%post -n xemacs-gnus-info-pkg
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
-%postun
+%postun -n xemacs-gnus-info-pkg
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
@@ -74,5 +86,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %{_datadir}/xemacs-packages/lisp/*
-%{_datadir}/xemacs-packages/etc/*
+%{_datadir}/xemacs-packages%{_sysconfdir}/*
+
+%files -n xemacs-gnus-info-pkg
+%defattr(644,root,root,755)
 %{_infodir}/*
