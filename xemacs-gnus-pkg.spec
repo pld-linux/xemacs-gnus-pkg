@@ -42,10 +42,10 @@ cat <<EOF >lisp/auto-autoloads.el
 EOF
 
 %package -n xemacs-gnus-info-pkg
-Summary:        Info documentation for GNUS
-Summary(pl):    Dokumentacja info dla GNUSa
-Group:          Applications/Editors/Emacs
-Requires:       xemacs-gnus-pkg = %{version}
+Summary:	Info documentation for GNUS
+Summary(pl):	Dokumentacja info dla GNUSa
+Group:		Applications/Editors/Emacs
+Requires:	xemacs-gnus-pkg = %{version}
 
 %description -n xemacs-gnus-info-pkg
 Info documentation for GNUS.
@@ -68,8 +68,6 @@ for i in lisp/*.el; do test ! -f ${i}c || rm -f $i ; done
 cp -a etc-%{etc_ver} $RPM_BUILD_ROOT%{_datadir}/xemacs-packages%{_sysconfdir}
 install lisp/*.el* $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/lisp/gnus
 install texi/gnus{,-[0-9]*} $RPM_BUILD_ROOT%{_infodir}
-
-
 
 %post -n xemacs-gnus-info-pkg
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
