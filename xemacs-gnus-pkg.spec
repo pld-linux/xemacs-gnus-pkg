@@ -53,7 +53,7 @@ Info documentation for GNUS.
 Dokumentacja info dla GNUSa.
 
 %build
-aclocal
+%{__aclocal}
 %{__autoconf}
 %configure
 %{__make} EMACS=xemacs
