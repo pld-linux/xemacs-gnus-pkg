@@ -67,7 +67,6 @@ cp -a etc-%{etc_ver} $RPM_BUILD_ROOT%{_datadir}/xemacs-packages%{_sysconfdir}
 install lisp/*.el* $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/lisp/gnus
 install texi/gnus{,-[0-9]*} $RPM_BUILD_ROOT%{_infodir}
 
-gzip -9nf README GNUS-NEWS ChangeLog
 
 
 %post -n xemacs-gnus-info-pkg
@@ -81,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README GNUS-NEWS ChangeLog
 %{_datadir}/xemacs-packages/lisp/*
 %{_datadir}/xemacs-packages%{_sysconfdir}/*
 
