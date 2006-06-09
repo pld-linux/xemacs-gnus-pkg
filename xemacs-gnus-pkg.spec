@@ -35,12 +35,6 @@ Dziêki pakietowi Gnus mo¿na czytaæ newsy i pocztê z u¿yciem XEmacsa.
 Gnus mo¿e pobieraæ listy z najró¿niejszych ¼róde³ w tym z lokalnego
 spoola jak i plików mbox.
 
-%prep
-%setup -q -n gnus-%{version} -a1
-cat <<EOF >lisp/auto-autoloads.el
-(autoload 'gnus "gnus" nil t)
-EOF
-
 %package -n xemacs-gnus-info-pkg
 Summary:	Info documentation for GNUS
 Summary(pl):	Dokumentacja info dla GNUSa
@@ -52,6 +46,12 @@ Info documentation for GNUS.
 
 %description -n xemacs-gnus-info-pkg -l pl
 Dokumentacja info dla GNUSa.
+
+%prep
+%setup -q -n gnus-%{version} -a1
+cat <<EOF >lisp/auto-autoloads.el
+(autoload 'gnus "gnus" nil t)
+EOF
 
 %build
 mv -f aclocal.m4 acinclude.m4
