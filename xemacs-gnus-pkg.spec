@@ -1,5 +1,5 @@
 Summary:	Emacs News and Mail reader
-Summary(pl.UTF-8):   Emacsowy czytnik poczty oraz grup usenet
+Summary(pl.UTF-8):	Emacsowy czytnik poczty oraz grup usenet
 Name:		xemacs-gnus-pkg
 Version:	5.8.8
 %define		etc_ver 0.27
@@ -37,7 +37,7 @@ spoola jak i plików mbox.
 
 %package -n xemacs-gnus-info-pkg
 Summary:	Info documentation for GNUS
-Summary(pl.UTF-8):   Dokumentacja info dla GNUSa
+Summary(pl.UTF-8):	Dokumentacja info dla GNUSa
 Group:		Applications/Editors/Emacs
 Requires:	xemacs-gnus-pkg = %{version}
 
