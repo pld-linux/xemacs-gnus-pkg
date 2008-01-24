@@ -70,11 +70,11 @@ cp -a etc-%{etc_ver} $RPM_BUILD_ROOT%{_datadir}/xemacs-packages%{_sysconfdir}
 install lisp/*.el* $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/lisp/gnus
 install texi/gnus{,-[0-9]*} $RPM_BUILD_ROOT%{_infodir}
 
-%post -n xemacs-gnus-info-pkg
-[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%post -n xemacs-gnus-info-pkg	-p	/sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun -n xemacs-gnus-info-pkg
-[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%postun -n xemacs-gnus-info-pkg	-p	/sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
