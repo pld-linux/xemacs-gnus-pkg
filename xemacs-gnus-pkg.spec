@@ -87,4 +87,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n xemacs-gnus-info-pkg
 %defattr(644,root,root,755)
-%{_infodir}/*
+%{_infodir}/*.info*
