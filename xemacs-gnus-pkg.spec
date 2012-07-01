@@ -1,19 +1,16 @@
 Summary:	Emacs News and Mail reader
 Summary(pl.UTF-8):	Emacsowy czytnik poczty oraz grup usenet
 Name:		xemacs-gnus-pkg
-Version:	5.8.8
-%define		etc_ver 0.27
-Release:	4
+Version:	1.94
+Release:	1
+Epoch:		1
 License:	GPL
 Group:		Applications/Editors/Emacs
-Source0:	ftp://ftp.gnus.org/pub/gnus/gnus-%{version}.tar.gz
-# Source0-md5:	eb3c7db29f1bc84996f11784f408a80c
-Source1:	ftp://ftp.gnus.org/pub/gnus/etc-%{etc_ver}.tar.gz
-# Source1-md5:	c98e5575541d4e5f7b9c8abcf2bf4fc0
+Source0:	http://ftp.xemacs.org/xemacs/packages/gnus-%{version}-pkg.tar.gz
+# Source0-md5:	e7a90a1e3eb657623697a9997d3d4d17
 URL:		http://www.gnus.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	xemacs
 Requires:	xemacs
 Requires:	xemacs-eterm-pkg
 Requires:	xemacs-fsf-compat-pkg
@@ -48,27 +45,20 @@ Info documentation for GNUS.
 Dokumentacja info dla GNUSa.
 
 %prep
-%setup -q -n gnus-%{version} -a1
-cat <<EOF >lisp/auto-autoloads.el
-(autoload 'gnus "gnus" nil t)
-EOF
+%setup -q -c
 
 %build
-mv -f aclocal.m4 acinclude.m4
-%{__aclocal}
-%{__autoconf}
-%configure
-%{__make} EMACS=xemacs
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_datadir}/xemacs-packages/lisp/gnus,%{_infodir}}
+install -d $RPM_BUILD_ROOT{%{_datadir}/xemacs-packages,%{_infodir}}
 
-# remove .el file if corresponding .elc exists
-for i in lisp/*.el; do test ! -f ${i}c || rm -f $i ; done
-cp -a etc-%{etc_ver} $RPM_BUILD_ROOT%{_datadir}/xemacs-packages%{_sysconfdir}
-install lisp/*.el* $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/lisp/gnus
-install texi/gnus{,-[0-9]*} $RPM_BUILD_ROOT%{_infodir}
+cp -a * $RPM_BUILD_ROOT%{_datadir}/xemacs-packages
+mv -f  $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info/*.info* $RPM_BUILD_ROOT%{_infodir}
+rm -fr $RPM_BUILD_ROOT%{_datadir}/xemacs-packages/info
+
+# remove .el file if corresponding .elc file exists
+find $RPM_BUILD_ROOT -type f -name "*.el" | while read i; do test ! -f ${i}c || rm -f $i; done
 
 %post -n xemacs-gnus-info-pkg	-p	/sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
@@ -81,7 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README GNUS-NEWS ChangeLog
+%doc lisp/gnus/GNUS-NEWS lisp/gnus/ChangeLog*
 %{_datadir}/xemacs-packages/lisp/*
 %{_datadir}/xemacs-packages%{_sysconfdir}/*
 
