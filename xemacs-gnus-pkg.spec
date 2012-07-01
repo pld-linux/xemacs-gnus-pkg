@@ -2,7 +2,7 @@ Summary:	Emacs News and Mail reader
 Summary(pl.UTF-8):	Emacsowy czytnik poczty oraz grup usenet
 Name:		xemacs-gnus-pkg
 Version:	1.94
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Applications/Editors/Emacs
@@ -36,7 +36,7 @@ spoola jak i plików mbox.
 Summary:	Info documentation for GNUS
 Summary(pl.UTF-8):	Dokumentacja info dla GNUSa
 Group:		Applications/Editors/Emacs
-Requires:	xemacs-gnus-pkg = %{version}
+Requires:	xemacs-gnus-pkg = %{epoch}:%{version}
 
 %description -n xemacs-gnus-info-pkg
 Info documentation for GNUS.
